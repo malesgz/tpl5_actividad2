@@ -1,11 +1,11 @@
-import { Sequelize } from "sequelize";
+import { Sequelize } from 'sequelize'; // Importa la clase Sequelize correctamente
+import { URI } from '../config/conf.js'; // Importa la URI de la configuración
 
-import { URI } from "../config/conf.js";
+// Crea una nueva instancia de Sequelize
+const sequelize = new Sequelize(URI, 'root', '', {
+    host: 'localhost',
+    dialect: 'mysql',
+    logging: false
+});
 
-const sequelize= new Sequelize(URI, 'root','',{
-    host:'localhost',
-    dialect:'mysql',
-    logging:false //Desactiva el loggin de sql en la consola.
-})
-
-export default sequelize
+export default sequelize;
