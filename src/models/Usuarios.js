@@ -1,12 +1,7 @@
 import { DataTypes, Model } from 'sequelize';
-import {sequelize} from '../db/connection.js';
+import sequelize from '../db/connection.js';
 
 export const Usuario = sequelize.define('Usuario', {
-  idUsuario: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true
-  },
   nombre: {
     type: DataTypes.STRING,
     allowNull: false
@@ -31,10 +26,6 @@ export const Usuario = sequelize.define('Usuario', {
     type: DataTypes.ENUM ('cliente', 'vendedor', 'administrador'),
     allowNull: false
   }
-}, {
-  sequelize,
-  timestamps: true,
-  modelName: 'usuario'
 });
 
 export default Usuario;
